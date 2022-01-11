@@ -1,0 +1,86 @@
+[
+    {
+        "user Name": "tahniyat",
+        "password": "ASqw!@12",
+        "Description": "i like myself",
+        "Birth Date": [
+            2,
+            "Apr",
+            1999
+        ],
+        "Hobbies": "music",
+        "Gender": "female"
+    },
+    {
+        "user Name": "pradnya",
+        "password": null,
+        "Description": "music",
+        "Birth Date": [
+            13,
+            "Jun",
+            1990
+        ],
+        "Hobbies": "travelling",
+        "Gender": "female"
+    },
+    {
+        "user Name": "bk",
+        "password": null,
+        "Description": "wqertyui",
+        "Birth Date": [
+            2,
+            "Apr",
+            2021
+        ],
+        "Hobbies": "asdfgh",
+        "Gender": "female"
+    },
+    {
+        "user Name": "SK",
+        "password": "Bk17@Sk",
+        "Description": "dasfgf",
+        "Birth Date": [
+            12,
+            "Jul",
+            2003
+        ],
+        "Hobbies": "ADSSGfh",
+        "Gender": "female"
+    },
+    {
+        "user Name": "Sushtro",
+        "password": "sdga",
+        "Description": "adsgff",
+        "Birth Date": [
+            12,
+            "Jul",
+            2003
+        ],
+        "Hobbies": "afsd",
+        "Gender": "female"
+    },
+    {
+        "user Name": "sdfhgh",
+        "password": "17@BKbhagu",
+        "Description": "asdgs",
+        "Birth Date": [
+            12,
+            "Jul",
+            1003
+        ],
+        "Hobbies": "asg",
+        "Gender": "female"
+    },
+    {
+        "user Name": "dfghj",
+        "password": "123@Aqw",
+        "Description": "werty",
+        "Birth Date": [
+            2,
+            "Feb",
+            2021
+        ],
+        "Hobbies": "yuityui",
+        "Gender": "female"
+    }
+]

@@ -1,4 +1,5 @@
 
+
 def password(pswrd):
    import re
    if len(pswrd)>=6 and len(pswrd)<=16:
@@ -38,36 +39,82 @@ def function_username(user_name):
    else:
       print("invalid format")
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+   # 
+   # if len(pswrd)>=6 or len(pswrd)<=16:
+   #    if pswrd>="a" or pswrd<="z":
+   #       if pswrd>="A" or pswrd<="Z":
+   #          if pswrd>="0" or pswrd<="9":
+   #             if ("@" or "#") in pswrd:
+   #                print("it is a strong password")
+   #             else:
+   #                print("it does not have special character")
+   #                pswrd3=input("enter 8 characters password:")
+   #                password(pswrd3)
+   #          else:
+   #             print("it does not have any number")
+   #             pswrd3=input("enter 8 characters password:")
+   #             password(pswrd3)
+   #       else:
+   #          print("it does not have uppercase letter")
+   #          pswrd3=input("enter 8 characters password:")
+   #          password(pswrd3)
+   #    else:
+   #       print("it does not have any lowercase letter")
+   #       pswrd3=input("enter 8 characters password:")
+   #       password(pswrd3)
+   # else:
+   #    print("password length is short")
+   #    pswrd3=input("enter 8 characters password:")
+   #    password(pswrd3)
+      
+
+# def function_username(user_name):
+#    if user_name>="A" or user_name<="Z":
+#       if user_name>="a" or user_name<="z":
+#          return user_name
+#       else:
+#          print("enter user name in correct format")
+#          user_name=input("enter the user name:")
+
+
+# def function_confirm_pswrd():
+#    pswrd1=password()
+#    print("renter your password to get confirmed")
+#    pswrd2=password()
+#    print("checking...")
+#    if pswrd1 == pswrd2:
+#       return pswrd2
+#       print("wait for a moment\nto get login")
+#    else:
+#       print("both paswords are not same")
+#       function_confirm_pswrd()
+
 def function_signup():
    user_name=input("enter a user name:")
    function_username(user_name)
-   print("Let's create a new password\ncontaining combination of numbers,capital letters,small letters,special characters")
-   def confirm_pswrd():
-      pswrd=input("enter 8 characters strong password:")
-      print(password(pswrd))
-      re_pswrd=input("renter your password to confirm:")
-      if re_pswrd==pswrd:
-         return re_pswrd
-         print("your new password is created")
-      else:
-         print("your password does'nt match")
-         flag=True
-         while flag==True:
-            repw=input("Please re-enter the correct password")
-            if pswrd==repw:
-               print("your new password is created")
-               return repw
-               break
-   PASSWORD=confirm_pswrd()
+
    description=input("write a description about you:")
    def DOB():
       Date=int(input("enter your Birth Date:"))
       if Date>=1 and Date<=31:
          month=input("enter your Birth Month Name(like for ex:Jan):")
-         if month in ("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"):
+         if month in ("Jan","Feb","March","Apr","May","Jun","July","Aug","Sep","Oct","Nov","Dec"):
             year=int(input("enter your Birth Year:"))
             if year>=1000 or year<=3000:
-               return(Date,month,year)
+               print("your DOB is",Date,month,year)
          else:
             print("please enter the month in correct format")
             DOB()
@@ -90,26 +137,13 @@ def function_signup():
    Gender=gender()
    print("")
 
-   Q_lis=["user Name","password","Description","Birth Date","Hobbies","Gender"]
-   temp_tuple=(user_name,PASSWORD,description,Birth_date,hobbies,Gender)
+   Q_lis=["user Name","Description","Birth Date","Hobbies","Gender"]
+   temp_tuple=(user_name,description,Birth_date,hobbies,Gender)
    A_lis=list(temp_tuple)
    test_dict={}
    for index in range(len(Q_lis)):
       test_dict[Q_lis[index]]=A_lis[index]
    # print(test_dict)
-   import json
-   import os.path
-   if os.path.exists("/home/bharati/Desktop/login or signup/userdetails.json")==True:
-      with open("userdetails.json","r") as json_file:
-         data=json_file.read()
-         previous=json.loads(data)
-         previous.append(test_dict)
-      with open("userdetails.json","w") as json_file:
-         json.dump(previous,json_file,indent=4)
-   else:
-      with open("userdetails.json","w") as json_file:
-         json.dump([test_dict],json_file,indent=4)
-   
 
 
 print("WELCOME TO FACEBOOK")
@@ -118,42 +152,23 @@ if Input=="1":
    print("WELCOME TO FACEBOOK SIGNUP PAGE")
    print("Let's create a new account")
    function_signup()
+   print("Let's create a new password\ncontaining combination of numbers,capital letters,small letters,special characters")
+   pswrd=input("enter 8 characters strong password:")
+   print(password(pswrd))
    print("congrats,you have sucessfully created a facebook account")
-   print("now your redirected to login page\nto signin to your account")
+   print("now your redirected to login page\n to signin to your account")
 elif Input=="2":
    print("WELCOME TO LOGIN PAGE OF FACEBOOK")
    user_name=input("enter username:")
    function_username(user_name)
    pswrd=input("enter 8 characters strong password:")
    password(pswrd)
-   Login_Dict={"USER_NAME":user_name,"PASSWORD":pswrd}
-      # print(Login_Dict)
-   import json
-   import os.path
-   if os.path.exists("/home/bharati/Desktop/login or signup/userdetails.json")==True:
-      with open("userdetails.json","r") as json_file:
-         data=json_file.read()
-         previous=json.loads(data)
-         if (user_name and pswrd) in data:
-            print("congrats,your are succesfully logged in")
-         else:
-            print("your account does'nt exist\ncreate new account by signup")
-            function_signup()
+   re_pswrd=input("renter your password to confirm:")
+   if re_pswrd==pswrd:
+      Login_Dict={"USER_NAME":user_name,"PASSWORD":re_pswrd}
+      print(Login_Dict)
    else:
-      print("your account does'nt exists\ncreate new account by signup")
-      function_signup()
-
-
-
-
-
-
-
-
-   
-
-
-
+      print("your password does'nt match")
 
 
 
